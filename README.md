@@ -7,9 +7,8 @@ This project is a 2D maze game developed using Java. The game includes various e
 - [Installation](#installation)
 - [Usage](#usage)
 - [Project Structure](#project-structure)
+- [Map Creation Script](#map-creation-script)
 - [Screenshots](#screenshots)
-- [Contributing](#contributing)
-- [License](#license)
 
 ## Installation
 
@@ -40,25 +39,64 @@ The project has the following structure:
 - `res/`: Directory containing game resources (images, sounds, etc.).
 - `bin/`: Directory containing compiled class files.
 
+## Map Creation Script
+
+This project contains a set of scripts designed to facilitate map creation for your game project. Below is an explanation of how to use these scripts.
+
+### Requirements
+
+First, you can install the necessary dependencies using the `requirements.txt` file. Simply run the following command:
+
+```sh
+pip install -r map_designer/pic_draw_converter/requirements.txt
+```
+
+### Usage
+
+#### 1. Converting Image to Matrix
+
+The `pic_matris_converter` directory contains the `pic_to_matrix.py` script, which converts an image to matrix format. Follow these steps to run the script:
+
+1. Replace the `input_image.png` file with the image you want to convert.
+2. Run the following command:
+
+```sh
+python map_designer/pic_matris_converter/pic_to_matrix.py
+```
+
+This command will read the `input_image.png` file and save it as a matrix in the `output_matrix.txt` file.
+
+#### 2. Drawing Image from Matrix
+
+The `pic_draw_converter` directory contains the `paint_program.py` script, which converts a matrix to image format. Follow these steps to run the script:
+
+1. Replace the `matrix.txt` file with the matrix you want to convert.
+2. Run the following command:
+
+```sh
+python map_designer/pic_draw_converter/paint_program.py
+```
+
+This command will read the `matrix.txt` file and create an image in the specified format.
+
+### File Structure
+
+- `map_designer/pic_draw_converter/`
+  - `matrix.txt`: The matrix file you want to convert.
+  - `paint_program.py`: The script used for drawing an image from a matrix.
+  - `requirements.txt`: The file containing necessary dependencies.
+- `map_designer/pic_matris_converter/`
+  - `input_image.png`: The image file you want to convert.
+  - `output_matrix.txt`: The converted matrix file.
+  - `pic_to_matrix.py`: The script used for converting an image to a matrix.
+
+By following these steps, you can easily perform the necessary map creation tasks for your game project.
+
 ## Screenshots
 
 Here are some screenshots from the game:
 
 ### Main Menu
-![Main Menu](res/repo_files/main_menu.png)
+![Main Menu](repo_files/main_menu.png)
 ### In-Game Screenshot
-![In-Game Screenshot](res/repo_files/in_game.png)
-
-## Contributing
-
-If you would like to contribute, please open an issue first to discuss what you would like to change. For major changes, please open an issue first to discuss what you would like to change.
-
-1. Fork the repository
-2. Create a new branch (`git checkout -b feature/AmazingFeature`)
-3. Commit your changes (`git commit -m 'Add some AmazingFeature'`)
-4. Push to the branch (`git push origin feature/AmazingFeature`)
-5. Open a Pull Request
-
-## License
-
-This project is licensed under the MIT License. See the `LICENSE` file for more information.
+![In-Game Screenshot](repo_files/in_game.png)
